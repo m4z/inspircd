@@ -26,17 +26,17 @@
 class CommandRConnect : public Command
 {
  public:
-        CommandRConnect(Module* Creator);
-        CmdResult Handle (const std::vector<std::string>& parameters, User *user);
-		RouteDescriptor GetRouting(User* user, const std::vector<std::string>& parameters);
+	CommandRConnect(Module* Creator);
+	CmdResult Handle(const std::vector<std::string>& parameters, User* user);
+	RouteDescriptor GetRouting(User* user, const std::vector<std::string>& parameters);
 };
 
 class CommandRSQuit : public Command
 {
  public:
-        CommandRSQuit(Module* Creator);
-        CmdResult Handle (const std::vector<std::string>& parameters, User *user);
-		RouteDescriptor GetRouting(User* user, const std::vector<std::string>& parameters);
+	CommandRSQuit(Module* Creator);
+	CmdResult Handle(const std::vector<std::string>& parameters, User* user);
+	RouteDescriptor GetRouting(User* user, const std::vector<std::string>& parameters);
 };
 
 class CommandMap : public Command
@@ -259,10 +259,10 @@ class CommandSNONotice : public ServerCommand
 	CmdResult Handle(User* user, std::vector<std::string>& parameters);
 };
 
-class CommandVersion : public ServerOnlyServerCommand<CommandServer>
+class CommandVersion : public ServerOnlyServerCommand<CommandVersion>
 {
  public:
-	CommandVersion(Module* Creator) : ServerOnlyServerCommand<CommandServer>(Creator, "VERSION", 1) { }
+	CommandVersion(Module* Creator) : ServerOnlyServerCommand<CommandVersion>(Creator, "VERSION", 1) { }
 	CmdResult HandleServer(TreeServer* server, std::vector<std::string>& parameters);
 };
 
